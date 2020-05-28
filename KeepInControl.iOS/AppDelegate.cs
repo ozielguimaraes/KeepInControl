@@ -4,7 +4,10 @@ using System.Linq;
 
 using Foundation;
 using KeepInControl.Constants;
+using KeepInControl.Renderers;
 using UIKit;
+using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace KeepInControl.iOS
 {
@@ -25,10 +28,14 @@ namespace KeepInControl.iOS
         {
             global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
             global::Xamarin.Forms.Forms.Init();
-            ColorConstant.Init();
             LoadApplication(new App());
+
+            ColorConstant.Init();
+            SetStatusBarColor();
 
             return base.FinishedLaunching(app, options);
         }
+
+        private void SetStatusBarColor() => DependencyService.Get<IStatusBarRenderer>().SetStatusBarColor(ColorConstant.PrimaryDark);
     }
 }

@@ -5,6 +5,7 @@ using Android.OS;
 using KeepInControl.Constants;
 using KeepInControl.Renderers;
 using Xamarin.Forms;
+using Xamarin.Essentials;
 
 namespace KeepInControl.Droid
 {
@@ -21,12 +22,15 @@ namespace KeepInControl.Droid
             global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            ColorConstant.Init();
 
-            var statusbar = DependencyService.Get<IStatusBarRenderer>();
-            statusbar.SetStatusBarColor(Color.Red);
             LoadApplication(new App());
+
+            ColorConstant.Init();
+            SetStatusBarColor();
         }
+
+        private void SetStatusBarColor() => DependencyService.Get<IStatusBarRenderer>().SetStatusBarColor(ColorConstant.PrimaryDark);
+
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);

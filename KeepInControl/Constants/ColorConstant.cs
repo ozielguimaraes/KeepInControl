@@ -10,10 +10,10 @@ namespace KeepInControl.Constants
         public static void Init()
         {
             if (Application.Current.Resources.TryGetValue(nameof(Primary), out var primary))
-                Primary = Color.FromHex(primary.ToString());
+                Primary = (Color)primary;
 
             if (Application.Current.Resources.TryGetValue(nameof(PrimaryDark), out var primaryDark))
-                PrimaryDark = Color.FromHex(primaryDark.ToString());
+                PrimaryDark = (Color)primaryDark;
         }
     }
 }
