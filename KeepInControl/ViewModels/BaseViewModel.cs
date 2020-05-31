@@ -14,8 +14,6 @@ namespace KeepInControl.ViewModels
     {
         public BaseViewModel()
         {
-            var statusbar = DependencyService.Get<IStatusBarRenderer>();
-            statusbar.SetStatusBarColor(ColorConstant.Primary);
         }
 
         public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();

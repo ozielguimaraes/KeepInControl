@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary
+    x:Class="KeepInControl.Resources.Themes.LightTheme"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Color x:Key="Background">#fafafa</Color>
+    <Color x:Key="BackgroundDark">#d4d2d2</Color>
+
+    <Color x:Key="Primary">#e86b83a0</Color>
+    <Color x:Key="Secondary">#e88c9fb5</Color>
+    <Color x:Key="Ternary">#e8ccd6e2</Color>
+</ResourceDictionary>

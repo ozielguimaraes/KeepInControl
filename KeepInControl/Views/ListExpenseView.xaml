@@ -4,23 +4,23 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-    xmlns:dictionary="clr-namespace:KeepInControl.Resources.Dictionaries"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="{Binding Title}"
+    Style="{DynamicResource BackgroundStyle}"
     mc:Ignorable="d">
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <dictionary:LabelDictionary />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
             <Label
                 HorizontalOptions="CenterAndExpand"
                 Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" />
+            <!--<Label
+                Margin="{StaticResource 0,
+                                        SpacingMedium,
+                                        0,
+                                        0}"
+                HorizontalOptions="CenterAndExpand"
+                Text="Texte de espaçamento!" />-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

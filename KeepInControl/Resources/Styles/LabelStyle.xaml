@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Style x:Key="LabelDefault" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource Primary}" />
+        <Setter Property="FontSize" Value="Default" />
+    </Style>
+
+    <Style BasedOn="{StaticResource LabelDefault}" TargetType="Label" />
+
+    <Style
+        x:Key="LabelCaption"
+        BasedOn="{StaticResource LabelDefault}"
+        TargetType="Label">
+        <Setter Property="FontSize" Value="Caption" />
+    </Style>
+
+    <Style
+        x:Key="LabelSmall"
+        BasedOn="{StaticResource LabelDefault}"
+        TargetType="Label">
+        <Setter Property="FontSize" Value="Small" />
+    </Style>
+
+    <Style
+        x:Key="LabelLarge"
+        BasedOn="{StaticResource LabelDefault}"
+        TargetType="Label">
+        <Setter Property="FontSize" Value="Large" />
+    </Style>
+
+    <Style
+        x:Key="LabelTitle"
+        BasedOn="{StaticResource LabelDefault}"
+        TargetType="Label">
+        <Setter Property="FontSize" Value="Title" />
+    </Style>
+
+    <Style
+        x:Key="LabelSubTitle"
+        BasedOn="{StaticResource LabelDefault}"
+        TargetType="Label">
+        <Setter Property="FontSize" Value="Subtitle" />
+    </Style>
+</ResourceDictionary>

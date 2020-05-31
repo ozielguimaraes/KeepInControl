@@ -6,6 +6,8 @@ using KeepInControl.Constants;
 using KeepInControl.Renderers;
 using Xamarin.Forms;
 using Xamarin.Essentials;
+using Android.Content.Res;
+using KeepInControl.Resources.Themes;
 
 namespace KeepInControl.Droid
 {
@@ -36,6 +38,27 @@ namespace KeepInControl.Droid
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        public override void OnConfigurationChanged(Configuration newConfig)
+        {
+            base.OnConfigurationChanged(newConfig);
+
+            if ((newConfig.UiMode & UiMode.NightNo) != 0)
+            {
+                if (App.Theme != AppTheme.Dark) return;
+                Xamarin.Forms.Application.Current.Resources = new LightTheme();
+                App.Theme = AppTheme.Light;
+            }
+            else
+            {
+                // Night mode is active, we're using dark theme
+                if (App.Theme != AppTheme.Dark) return;
+                //Add a Check for App Theme since this is called even when not changed really
+
+                Xamarin.Forms.Application.Current.Resources = new DarkTheme();
+                App.Theme = AppTheme.Dark;
+            }
         }
     }
 }

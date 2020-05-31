@@ -1,12 +1,12 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace KeepInControl.Resources.Dictionaries
+namespace KeepInControl.Resources.Themes
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LabelDictionary : ResourceDictionary
+    public partial class DefaultTheme : ResourceDictionary
     {
-        public LabelDictionary()
+        public DefaultTheme()
         {
             InitializeComponent();
         }

@@ -1,13 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ResourceDictionary
-    x:Class="KeepInControl.Resources.Dictionaries.LabelDictionary"
+    x:Class="KeepInControl.Resources.Themes.DarkTheme"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Source="DefaultTheme.xaml"
     mc:Ignorable="d">
 
-    <Style TargetType="Label">
-        <Setter Property="TextColor" Value="{StaticResource Primary}" />
-    </Style>
+    <Color x:Key="Background">#fa000d3e</Color>
+    <Color x:Key="BackgroundDark">#000524</Color>
+
+    <Color x:Key="Primary">#fafafa</Color>
+    <Color x:Key="Secondary">#f2177f04</Color>
+    <Color x:Key="Ternary">#f204417f</Color>
 </ResourceDictionary>

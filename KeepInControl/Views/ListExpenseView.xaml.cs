@@ -12,7 +12,7 @@ namespace KeepInControl.Views
         public ListExpenseView()
         {
             InitializeComponent();
-            BindingContext = ViewModel ?? new ListExpenseViewModel();
+            BindingContext = ViewModel = ViewModel ?? new ListExpenseViewModel();
         }
     }
 }
