@@ -5,6 +5,7 @@ using Xamarin.Forms.Xaml;
 using KeepInControl.Services;
 using KeepInControl.Views;
 
+[assembly: ExportFont("fa-solid-900.ttf", Alias = "FontAwesome")]
 namespace KeepInControl
 {
     public partial class App : Application
@@ -15,6 +16,7 @@ namespace KeepInControl
         public static string AzureBackendUrl =
             DeviceInfo.Platform == DevicePlatform.Android ? "http://10.0.2.2:5000" : "http://localhost:5000";
         public static bool UseMockDataStore = true;
+        public static bool UserIsLogged = false;
         public static AppTheme Theme { get; set; }
 
         public App()
@@ -25,7 +27,14 @@ namespace KeepInControl
                 DependencyService.Register<MockDataStore>();
             else
                 DependencyService.Register<AzureDataStore>();
-            MainPage = new AppShell();
+
+            SetMainPage();
+        }
+
+        private void SetMainPage()
+        {
+            if (UserIsLogged) MainPage = new AppShell();
+            else MainPage = new LoginPage();
         }
 
         protected override void OnStart()

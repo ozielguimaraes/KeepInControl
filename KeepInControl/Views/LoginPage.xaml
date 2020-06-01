@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="KeepInControl.Views.LoginPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:constants="clr-namespace:KeepInControl.Constants"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    NavigationPage.HasNavigationBar="False"
+    Style="{DynamicResource BackgroundStyle}"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <StackLayout Spacing="12">
+            <Label
+                Margin="0,40,0,0"
+                FontFamily="{StaticResource FontOfIcons}"
+                FontSize="70"
+                HorizontalOptions="CenterAndExpand"
+                Text="{x:Static constants:IconConstant.Ad}" />
+
+            <StackLayout Margin="8,0" Orientation="Horizontal">
+                <Label
+                    FontFamily="{StaticResource FontOfIcons}"
+                    Text="{x:Static constants:IconConstant.User}"
+                    VerticalOptions="CenterAndExpand" />
+                <Entry
+                    Margin="8,0,0,0"
+                    BackgroundColor="{DynamicResource Background}"
+                    HorizontalOptions="FillAndExpand"
+                    Placeholder="Login"
+                    VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+            <StackLayout Margin="8,0" Orientation="Horizontal">
+                <Label
+                    FontFamily="{StaticResource FontOfIcons}"
+                    Text="{x:Static constants:IconConstant.Lock}"
+                    VerticalOptions="CenterAndExpand" />
+                <Entry
+                    Margin="8,0,0,0"
+                    BackgroundColor="{DynamicResource Background}"
+                    HorizontalOptions="FillAndExpand"
+                    Placeholder="Senha"
+                    VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
