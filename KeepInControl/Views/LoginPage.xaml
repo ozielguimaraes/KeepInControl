@@ -10,13 +10,24 @@
     Style="{DynamicResource BackgroundStyle}"
     mc:Ignorable="d">
     <ContentPage.Content>
-        <StackLayout Spacing="12">
+        <StackLayout Spacing="12" Padding="20">
             <Label
-                Margin="0,40,0,0"
+                Margin="0,40,0,60"
                 FontFamily="{StaticResource FontOfIcons}"
                 FontSize="70"
                 HorizontalOptions="CenterAndExpand"
-                Text="{x:Static constants:IconConstant.Ad}" />
+                >
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="K" FontSize="26" TextColor="Red" />
+                        <Span Text="eep " FontSize="20" />
+                        <Span Text="I" FontSize="26" TextColor="Red" />
+                        <Span Text="n " FontSize="20" />
+                        <Span Text="C" FontSize="26" TextColor="Red" />
+                        <Span Text="ontrol" FontSize="20" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
 
             <StackLayout Margin="8,0" Orientation="Horizontal">
                 <Label
@@ -42,6 +53,23 @@
                     Placeholder="Senha"
                     VerticalOptions="CenterAndExpand" />
             </StackLayout>
+            <Button FontFamily="{StaticResource FontOfIcons}" 
+                    Text="{Binding Source={x:Static constants:IconConstant.SignInAlt}, StringFormat='{0}  SIGN IN'}" 
+                    BackgroundColor="Green" TextColor="White"
+                    CornerRadius="25" Margin="30,15"/>
+            
+            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="DON'T HAVE ACCOUNT?" FontSize="12" />
+                        <Span Text="{x:Static x:Environment.NewLine}" />
+                        <Span Text="Sign up" FontSize="22" TextColor="Gray" />
+                    </FormattedString>
+                </Label.FormattedText>
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding SignupCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
