@@ -10,26 +10,5 @@ namespace KeepInControl.ViewModels
         {
             Title = "Expenses";
         }
-        private static bool useDarkMode = false;
-        public bool UseDarkMode
-        {
-            get => useDarkMode;
-            set
-            {
-                useDarkMode = value;
-                OnPropertyChanged(nameof(UseDarkMode));
-
-                if (UseDarkMode && App.Theme != AppTheme.Dark)
-                {
-                    Application.Current.Resources = new DarkTheme();
-                    App.Theme = AppTheme.Dark;
-                }
-                else if (!UseDarkMode && App.Theme == AppTheme.Dark)
-                {
-                    Application.Current.Resources = new LightTheme();
-                    App.Theme = AppTheme.Light;
-                }
-            }
-        }
     }
 }

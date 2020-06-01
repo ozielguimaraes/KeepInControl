@@ -15,13 +15,13 @@
     </ContentPage.ToolbarItems>
 
     <StackLayout>
-        <!--<StackLayout>
+        <StackLayout>
             <CheckBox IsChecked="{Binding UseDarkMode}" VerticalOptions="Center" />
             <Label
                 Style="{StaticResource LabelTitle}"
                 Text="Dark mode"
                 VerticalOptions="Center" />
-        </StackLayout>-->
+        </StackLayout>
 
         <RefreshView Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
 

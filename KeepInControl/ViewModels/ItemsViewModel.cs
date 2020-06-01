@@ -4,7 +4,9 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using KeepInControl.Models;
+using KeepInControl.Resources.Themes;
 using KeepInControl.Views;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace KeepInControl.ViewModels
@@ -48,6 +50,28 @@ namespace KeepInControl.ViewModels
             finally
             {
                 IsBusy = false;
+            }
+        }
+
+        private static bool useDarkMode = false;
+        public bool UseDarkMode
+        {
+            get => useDarkMode;
+            set
+            {
+                useDarkMode = value;
+                OnPropertyChanged(nameof(UseDarkMode));
+
+                if (UseDarkMode && App.Theme != AppTheme.Dark)
+                {
+                    Application.Current.Resources = new DarkTheme();
+                    App.Theme = AppTheme.Dark;
+                }
+                else if (!UseDarkMode && App.Theme == AppTheme.Dark)
+                {
+                    Application.Current.Resources = new LightTheme();
+                    App.Theme = AppTheme.Light;
+                }
             }
         }
     }
