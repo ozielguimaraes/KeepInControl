@@ -7,7 +7,7 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     NavigationPage.HasNavigationBar="False"
-    Style="{DynamicResource BackgroundStyle}"
+    BackgroundImageSource="bkg.jpg"
     mc:Ignorable="d">
     <ContentPage.Content>
         <StackLayout Spacing="12" Padding="20">
@@ -19,12 +19,12 @@
                 >
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="K" FontSize="26" TextColor="Red" />
-                        <Span Text="eep " FontSize="20" />
-                        <Span Text="I" FontSize="26" TextColor="Red" />
-                        <Span Text="n " FontSize="20" />
-                        <Span Text="C" FontSize="26" TextColor="Red" />
-                        <Span Text="ontrol" FontSize="20" />
+                        <Span Text="K" FontSize="26" TextColor="Green" FontAttributes="Bold" />
+                        <Span Text="eep " FontSize="20" TextColor="White"  />
+                        <Span Text="I" FontSize="26" TextColor="Green" FontAttributes="Bold"/>
+                        <Span Text="n " FontSize="20" TextColor="White" />
+                        <Span Text="C" FontSize="26" TextColor="Green" FontAttributes="Bold"/>
+                        <Span Text="ontrol" FontSize="20" TextColor="White"/>
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
@@ -36,9 +36,11 @@
                     VerticalOptions="CenterAndExpand" />
                 <Entry
                     Margin="8,0,0,0"
-                    BackgroundColor="{DynamicResource Background}"
                     HorizontalOptions="FillAndExpand"
                     Placeholder="Login"
+                    PlaceholderColor="White"
+                    BackgroundColor="Transparent"
+                    TextColor="White"
                     VerticalOptions="CenterAndExpand" />
             </StackLayout>
             <StackLayout Margin="8,0" Orientation="Horizontal">
@@ -48,8 +50,12 @@
                     VerticalOptions="CenterAndExpand" />
                 <Entry
                     Margin="8,0,0,0"
-                    BackgroundColor="{DynamicResource Background}"
                     HorizontalOptions="FillAndExpand"
+                    PlaceholderColor="White"
+                    BackgroundColor="Transparent"
+                    
+                    IsPassword="True"
+                    TextColor="White"
                     Placeholder="Senha"
                     VerticalOptions="CenterAndExpand" />
             </StackLayout>
