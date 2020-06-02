@@ -17,5 +17,6 @@
         <ResourceDictionary Source="/Resources/Styles/SizeStyle.xaml" />
         <ResourceDictionary Source="/Resources/Styles/PageStyle.xaml" />
         <ResourceDictionary Source="/Resources/Styles/LabelStyle.xaml" />
+        <ResourceDictionary Source="/Resources/Styles/EntryStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" >
+    <Style x:Key="EntryDefault" TargetType="Entry">
+        <Setter Property="Placeholder" Value="{DynamicResource Primary}" />
+        <Setter Property="TextColor" Value="{DynamicResource Primary}" />
+        <Setter Property="FontSize" Value="Default" />
+    </Style>
+    
+    <Style BasedOn="{StaticResource EntryDefault}" TargetType="Entry" />
+
+    <Style
+        x:Key="EntryCaption"
+        BasedOn="{StaticResource EntryDefault}"
+        TargetType="Entry">
+        <Setter Property="FontSize" Value="Caption" />
+    </Style>
+
+    <Style
+        x:Key="EntrySmall"
+        BasedOn="{StaticResource EntryDefault}"
+        TargetType="Entry">
+        <Setter Property="FontSize" Value="Small" />
+    </Style>
+
+    <Style
+        x:Key="EntryLarge"
+        BasedOn="{StaticResource EntryDefault}"
+        TargetType="Entry">
+        <Setter Property="FontSize" Value="Large" />
+    </Style>
+
+    <Style
+        x:Key="EntryTitle"
+        BasedOn="{StaticResource EntryDefault}"
+        TargetType="Entry">
+        <Setter Property="FontSize" Value="Title" />
+    </Style>
+
+    <Style
+        x:Key="EntrySubTitle"
+        BasedOn="{StaticResource EntryDefault}"
+        TargetType="Entry">
+        <Setter Property="FontSize" Value="Subtitle" />
+    </Style>
+</ResourceDictionary>
