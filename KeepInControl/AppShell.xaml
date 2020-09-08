@@ -36,31 +36,8 @@
         <Tab Title="About" Icon="tab_about.png">
             <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" />
         </Tab>
+        <Tab Title="Transactions" Icon="tab_feed.png">
+            <ShellContent ContentTemplate="{DataTemplate local:TransactionsView}" />
+        </Tab>
     </TabBar>
-
-    <!-- Optional Templates
-    // These may be provided inline as below or as separate classes.
-
-    // This header appears at the top of the Flyout.
-
-    // ItemTemplate is for ShellItems as displayed in a Flyout
-    <Shell.ItemTemplate>
-        <DataTemplate>
-            <ContentView>
-                Bindable Properties: Title, Icon
-            </ContentView>
-        </DataTemplate>
-    </Shell.ItemTemplate>
-
-    // MenuItemTemplate is for MenuItems as displayed in a Flyout
-    <Shell.MenuItemTemplate>
-        <DataTemplate>
-            <ContentView>
-                Bindable Properties: Text, Icon
-            </ContentView>
-        </DataTemplate>
-    </Shell.MenuItemTemplate>
-
-    -->
-
 </Shell>

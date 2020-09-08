@@ -1,8 +1,4 @@
-﻿using KeepInControl.Resources.Themes;
-using Xamarin.Essentials;
-using Xamarin.Forms;
-
-namespace KeepInControl.ViewModels
+﻿namespace KeepInControl.ViewModels
 {
     public class ListExpenseViewModel : BaseViewModel
     {

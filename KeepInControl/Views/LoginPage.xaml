@@ -6,25 +6,45 @@
     xmlns:constants="clr-namespace:KeepInControl.Constants"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    NavigationPage.HasNavigationBar="False"
     BackgroundImageSource="bkg.jpg"
+    NavigationPage.HasNavigationBar="False"
     mc:Ignorable="d">
     <ContentPage.Content>
-        <StackLayout Spacing="12" Padding="20">
+        <StackLayout Padding="20" Spacing="12">
             <Label
                 Margin="0,40,0,60"
                 FontFamily="{StaticResource FontOfIcons}"
                 FontSize="70"
-                HorizontalOptions="CenterAndExpand"
-                >
+                HorizontalOptions="CenterAndExpand">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="K" FontSize="26" TextColor="Green" FontAttributes="Bold" />
-                        <Span Text="eep " FontSize="20" TextColor="White"  />
-                        <Span Text="I" FontSize="26" TextColor="Green" FontAttributes="Bold"/>
-                        <Span Text="n " FontSize="20" TextColor="White" />
-                        <Span Text="C" FontSize="26" TextColor="Green" FontAttributes="Bold"/>
-                        <Span Text="ontrol" FontSize="20" TextColor="White"/>
+                        <Span
+                            FontAttributes="Bold"
+                            FontSize="26"
+                            Text="K"
+                            TextColor="Green" />
+                        <Span
+                            FontSize="20"
+                            Text="eep "
+                            TextColor="White" />
+                        <Span
+                            FontAttributes="Bold"
+                            FontSize="26"
+                            Text="I"
+                            TextColor="Green" />
+                        <Span
+                            FontSize="20"
+                            Text="n "
+                            TextColor="White" />
+                        <Span
+                            FontAttributes="Bold"
+                            FontSize="26"
+                            Text="C"
+                            TextColor="Green" />
+                        <Span
+                            FontSize="20"
+                            Text="ontrol"
+                            TextColor="White" />
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
@@ -36,10 +56,11 @@
                     VerticalOptions="CenterAndExpand" />
                 <Entry
                     Margin="8,0,0,0"
+                    BackgroundColor="Transparent"
                     HorizontalOptions="FillAndExpand"
                     Placeholder="Login"
                     PlaceholderColor="White"
-                    BackgroundColor="Transparent"
+                    Text="{Binding UserName}"
                     TextColor="White"
                     VerticalOptions="CenterAndExpand" />
             </StackLayout>
@@ -50,26 +71,33 @@
                     VerticalOptions="CenterAndExpand" />
                 <Entry
                     Margin="8,0,0,0"
-                    HorizontalOptions="FillAndExpand"
-                    PlaceholderColor="White"
                     BackgroundColor="Transparent"
-                    
+                    HorizontalOptions="FillAndExpand"
                     IsPassword="True"
-                    TextColor="White"
                     Placeholder="Senha"
+                    PlaceholderColor="White"
+                    Text="{Binding Password}"
+                    TextColor="White"
                     VerticalOptions="CenterAndExpand" />
             </StackLayout>
-            <Button FontFamily="{StaticResource FontOfIcons}" 
-                    Text="{Binding Source={x:Static constants:IconConstant.SignInAlt}, StringFormat='{0}  SIGN IN'}" 
-                    BackgroundColor="Green" TextColor="White"
-                    CornerRadius="25" Margin="30,15"/>
-            
+            <Button
+                Margin="30,15"
+                BackgroundColor="Green"
+                Command="{Binding SignInComand}"
+                CornerRadius="25"
+                FontFamily="{StaticResource FontOfIcons}"
+                Text="{Binding Source={x:Static constants:IconConstant.SignInAlt}, StringFormat='{0}  SIGN IN'}"
+                TextColor="White" />
+
             <Label HorizontalOptions="Center" HorizontalTextAlignment="Center">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="DON'T HAVE ACCOUNT?" FontSize="12" />
+                        <Span FontSize="12" Text="DON'T HAVE ACCOUNT?" />
                         <Span Text="{x:Static x:Environment.NewLine}" />
-                        <Span Text="Sign up" FontSize="22" TextColor="Gray" />
+                        <Span
+                            FontSize="22"
+                            Text="Sign up"
+                            TextColor="Gray" />
                     </FormattedString>
                 </Label.FormattedText>
                 <Label.GestureRecognizers>

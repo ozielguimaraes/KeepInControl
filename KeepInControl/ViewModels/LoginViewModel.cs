@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using KeepInControl.Services;
+using KeepInControl.Views;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -25,16 +27,26 @@ namespace KeepInControl.ViewModels
         private async Task SignIn()
         {
             if (string.IsNullOrWhiteSpace(UserName))
+            {
                 await Application.Current.MainPage.DisplayAlert("Aviso", "Campo Login é obrigatório.", "OK");
+                return;
+            }
 
             if (string.IsNullOrWhiteSpace(Password))
+            {
                 await Application.Current.MainPage.DisplayAlert("Aviso", "Campo Senha é obrigatório.", "OK");
+                return;
+            }
 
             if (Xamarin.Essentials.Connectivity.NetworkAccess != Xamarin.Essentials.NetworkAccess.Internet)
                 await Application.Current.MainPage.DisplayAlert("Ops!", "Você não está conectado na internet.", "OK");
 
             //TODO Create service communication
-            App.UserIsLogged = true;
+            var userService = new UserService();
+            await userService.AutenticateAsync(UserName, Password);
+
+            await Application.Current.MainPage.Navigation.PushModalAsync(new TransactionsView());
+            //await Shell.Current.GoToAsync("transactions");
         }
     }
 }

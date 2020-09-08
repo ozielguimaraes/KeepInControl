@@ -16,13 +16,12 @@ namespace KeepInControl
         public static string AzureBackendUrl =
             DeviceInfo.Platform == DevicePlatform.Android ? "http://10.0.2.2:5000" : "http://localhost:5000";
         public static bool UseMockDataStore = true;
-        public static bool UserIsLogged = false;
         public static AppTheme Theme { get; set; }
 
         public App()
         {
             InitializeComponent();
-
+            Initialize();
             if (UseMockDataStore)
                 DependencyService.Register<MockDataStore>();
             else
@@ -31,10 +30,18 @@ namespace KeepInControl
             SetMainPage();
         }
 
+        public static void Initialize()
+        {
+        }
+
         private void SetMainPage()
         {
-            if (UserIsLogged) MainPage = new AppShell();
-            else MainPage = new LoginPage();
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                var userService = new UserService();
+                if (await userService.IsLoggedAsync()) MainPage = new AppShell();
+                else MainPage = new LoginPage();
+            });
         }
 
         protected override void OnStart()
