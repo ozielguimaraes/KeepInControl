@@ -1,47 +1,28 @@
 ﻿using KeepInControl.Models;
+using KeepInControl.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace KeepInControl.ViewModels
 {
     public class TransactionsViewModel : BaseViewModel
     {
+        public Command LoadCommand { get; }
+
         public TransactionsViewModel()
         {
-            Items = new List<Transaction>
-            {
-                new Transaction
-                {
-                 Id = 1,
-                 Establishment = "Ponto Frio",
-                 Value = 122,
-                 Date = DateTime.Now
-                },
-                new Transaction
-                {
-                 Id = 2,
-                 Establishment = "Azure",
-                 Value = 12,
-                 Date = DateTime.Now.AddDays(-1)
-                },
-                new Transaction
-                {
-                 Id = 3,
-                 Establishment = "Netflix",
-                 Value = 37.9m,
-                 Date = DateTime.Now.AddDays(-2)
-                },
-                new Transaction
-                {
-                 Id = 4,
-                 Establishment = "Parcela da casa",
-                 Value = 1200,
-                 Date = DateTime.Now.AddDays(-5)
-                }
-            };
+            LoadCommand = new Command(async () => await ExecuteLoadCommand());
         }
 
         public List<Transaction> Items { get; set; }
+
+        private async Task ExecuteLoadCommand()
+        {
+            var service = new TransactionService();
+            Items = await service.GetRecentAsync();
+        }
     }
 }

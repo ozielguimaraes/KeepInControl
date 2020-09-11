@@ -14,5 +14,11 @@ namespace KeepInControl.Views
             InitializeComponent();
             BindingContext = ViewModel = ViewModel ?? new TransactionsViewModel();
         }
+
+        protected override void OnAppearing()
+        {
+            ViewModel.LoadCommand.Execute(null);
+            base.OnAppearing();
+        }
     }
 }

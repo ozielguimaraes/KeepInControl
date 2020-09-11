@@ -13,7 +13,7 @@
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Padding="20" BackgroundColor="Red">
-                            <Label Text="{Binding Establishment}" />
+                            <Label Text="{Binding Description}" TextColor="AliceBlue" />
                             <Label Text="{Binding Value, StringFormat='{0}'}" />
                         </StackLayout>
                     </ViewCell>

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using Xamarin.Essentials;
 using KeepInControl.Models;
+using System.Text.Json;
 
 namespace KeepInControl.Services
 {
@@ -28,7 +28,7 @@ namespace KeepInControl.Services
             if (forceRefresh && IsConnected)
             {
                 var json = await client.GetStringAsync($"api/item");
-                items = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<Item>>(json));
+                items = await Task.Run(() => JsonSerializer.Deserialize<IEnumerable<Item>>(json));
             }
 
             return items;
@@ -39,7 +39,7 @@ namespace KeepInControl.Services
             if (id != null && IsConnected)
             {
                 var json = await client.GetStringAsync($"api/item/{id}");
-                return await Task.Run(() => JsonConvert.DeserializeObject<Item>(json));
+                return await Task.Run(() => JsonSerializer.Deserialize<Item>(json));
             }
 
             return null;
@@ -50,7 +50,7 @@ namespace KeepInControl.Services
             if (item == null || !IsConnected)
                 return false;
 
-            var serializedItem = JsonConvert.SerializeObject(item);
+            var serializedItem = JsonSerializer.Serialize(item);
 
             var response = await client.PostAsync($"api/item", new StringContent(serializedItem, Encoding.UTF8, "application/json"));
 
@@ -62,7 +62,7 @@ namespace KeepInControl.Services
             if (item == null || item.Id == null || !IsConnected)
                 return false;
 
-            var serializedItem = JsonConvert.SerializeObject(item);
+            var serializedItem = JsonSerializer.Serialize(item);
             var buffer = Encoding.UTF8.GetBytes(serializedItem);
             var byteContent = new ByteArrayContent(buffer);
 
