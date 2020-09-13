@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using KeepInControl.Services;
 using KeepInControl.Views;
+using KeepInControl.IoC;
 
 [assembly: ExportFont("fa-solid-900.ttf", Alias = "FontAwesome")]
 namespace KeepInControl
@@ -32,6 +33,7 @@ namespace KeepInControl
 
         public static void Initialize()
         {
+            AppContainer.RegisterDependencies();
         }
 
         private void SetMainPage()

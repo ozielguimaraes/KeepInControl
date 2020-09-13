@@ -6,12 +6,13 @@
 
     <x:String x:Key="FontOfIcons">FontAwesome</x:String>
 
-    <Color x:Key="Background">#fa000d3e</Color>
-    <Color x:Key="BackgroundDark">#000524</Color>
+    <Color x:Key="Background">#523CF8</Color>
+    <Color x:Key="BackgroundDark">#110281</Color>
 
-    <Color x:Key="Primary">#fafafa</Color>
-    <Color x:Key="Secondary">#f2177f04</Color>
-    <Color x:Key="Ternary">#f204417f</Color>
+    <Color x:Key="Primary">#16110D</Color>
+    <Color x:Key="Secondary">#C4C4C4</Color>
+    <Color x:Key="Ternary">#523CF8</Color>
+    <Color x:Key="Quaternary">#F76654</Color>
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/Resources/Styles/SizeStyle.xaml" />

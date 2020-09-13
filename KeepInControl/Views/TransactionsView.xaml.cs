@@ -12,7 +12,7 @@ namespace KeepInControl.Views
         public TransactionsView()
         {
             InitializeComponent();
-            BindingContext = ViewModel = ViewModel ?? new TransactionsViewModel();
+            BindingContext = ViewModel ??= new TransactionsViewModel();
         }
 
         protected override void OnAppearing()

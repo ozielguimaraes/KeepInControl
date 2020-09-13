@@ -8,10 +8,11 @@
     Source="DefaultTheme.xaml"
     mc:Ignorable="d">
 
-    <Color x:Key="Background">#fafafa</Color>
-    <Color x:Key="BackgroundDark">#d4d2d2</Color>
+    <Color x:Key="Background">#523CF8</Color>
+    <Color x:Key="BackgroundDark">#110281</Color>
 
-    <Color x:Key="Primary">#e86b83a0</Color>
-    <Color x:Key="Secondary">#e88c9fb5</Color>
-    <Color x:Key="Ternary">#e8ccd6e2</Color>
+    <Color x:Key="Primary">#16110D</Color>
+    <Color x:Key="Secondary">#C4C4C4</Color>
+    <Color x:Key="Ternary">#523CF8</Color>
+    <Color x:Key="Quaternary">#F76654</Color>
 </ResourceDictionary>

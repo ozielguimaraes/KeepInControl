@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<?xaml-comp compile="true" ?>
+<?Mapping compile="true"     ?>
 
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <Style x:Key="LabelDefault" TargetType="Label">
@@ -8,6 +8,13 @@
     </Style>
 
     <Style BasedOn="{StaticResource LabelDefault}" TargetType="Label" />
+
+    <Style
+        x:Key="LabelMicro"
+        BasedOn="{StaticResource LabelDefault}"
+        TargetType="Label">
+        <Setter Property="FontSize" Value="Micro" />
+    </Style>
 
     <Style
         x:Key="LabelCaption"
@@ -31,16 +38,16 @@
     </Style>
 
     <Style
-        x:Key="LabelTitle"
-        BasedOn="{StaticResource LabelDefault}"
-        TargetType="Label">
-        <Setter Property="FontSize" Value="Title" />
-    </Style>
-
-    <Style
         x:Key="LabelSubTitle"
         BasedOn="{StaticResource LabelDefault}"
         TargetType="Label">
         <Setter Property="FontSize" Value="Subtitle" />
+    </Style>
+
+    <Style
+        x:Key="LabelTitle"
+        BasedOn="{StaticResource LabelDefault}"
+        TargetType="Label">
+        <Setter Property="FontSize" Value="Title" />
     </Style>
 </ResourceDictionary>

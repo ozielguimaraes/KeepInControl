@@ -6,19 +6,45 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Transações"
+    BackgroundColor="{StaticResource Background}"
     mc:Ignorable="d">
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding Items}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Padding="20" BackgroundColor="Red">
-                            <Label Text="{Binding Description}" TextColor="AliceBlue" />
-                            <Label Text="{Binding Value, StringFormat='{0}'}" />
+        <StackLayout Margin="10,0">
+            <Frame CornerRadius="25">
+                <CollectionView ItemsSource="{Binding Items}">
+                    <CollectionView.Header>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Style="{StaticResource LabelSubTitle}" Text="Transações recentes" />
+                            <Image HorizontalOptions="EndAndExpand" Source="tab_feed" />
                         </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                    </CollectionView.Header>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="tab_feed" VerticalOptions="CenterAndExpand" />
+                                <StackLayout Spacing="0">
+                                    <Label Style="{DynamicResource LabelSmall}" Text="{Binding Description}" />
+                                    <Label
+                                        Style="{DynamicResource LabelMicro}"
+                                        Text="{Binding Date, StringFormat='{0:dd MMM, HH:mm}'}"
+                                        TextColor="{DynamicResource Secondary}" />
+                                </StackLayout>
+                                <StackLayout HorizontalOptions="EndAndExpand" Spacing="0">
+                                    <Label
+                                        Style="{DynamicResource LabelSmall}"
+                                        Text="{Binding Value, StringFormat='{0:C}'}"
+                                        TextColor="{StaticResource Quaternary}" />
+                                    <Label
+                                        HorizontalOptions="EndAndExpand"
+                                        Style="{DynamicResource LabelMicro}"
+                                        Text="BRL"
+                                        TextColor="{DynamicResource Secondary}" />
+                                </StackLayout>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Frame>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
